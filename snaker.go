@@ -8,10 +8,6 @@ import (
 	"golang.org/x/text/language"
 )
 
-func AddInitialism(i string) {
-	commonInitialisms[i] = struct{}{}
-}
-
 // ToSnake converts a given string to snake case
 func ToSnake(s string) string {
 	if s == "" {
@@ -85,7 +81,7 @@ func ToCamel(s string) string {
 
 		if i > 0 {
 			upper := strings.ToUpper(word)
-			if _, ok := commonInitialisms[upper]; len(s) > i-1 && ok {
+			if len(s) > i-1 && commonInitialisms[upper] {
 				result += upper
 				continue
 			}
