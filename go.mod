@@ -1,4 +1,4 @@
-module github.com/cloudquery/snaker
+module github.com/cloudquery/caser
 
 go 1.19
 
