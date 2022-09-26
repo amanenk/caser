@@ -1,4 +1,4 @@
-package snaker
+package caser
 
 // commonInitialisms taken from https://github.com/golang/lint/blob/master/lint.go
 var commonInitialisms = map[string]bool{

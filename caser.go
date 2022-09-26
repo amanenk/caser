@@ -1,4 +1,4 @@
-package snaker
+package caser
 
 import (
 	"strings"
