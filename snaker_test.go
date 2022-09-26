@@ -77,3 +77,22 @@ func Test_ToPascal(t *testing.T) {
 		})
 	}
 }
+
+func Test_Configure(t *testing.T) {
+	type test struct {
+		Camel string
+		Snake string
+	}
+
+	generatorTests := []test{
+		{Camel: "CDNs", Snake: "cdns"},
+		{Camel: "ARNs", Snake: "arns"},
+	}
+	ConfigureInitialisms(map[string]bool{"CDN": true, "ARN": true})
+	t.Parallel()
+	for _, tc := range generatorTests {
+		t.Run(tc.Camel, func(t *testing.T) {
+			assert.Equal(t, tc.Snake, ToSnake(tc.Camel))
+		})
+	}
+}
